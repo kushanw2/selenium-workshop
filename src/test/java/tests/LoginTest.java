@@ -1,6 +1,7 @@
 package tests;
 
-import org.openqa.selenium.By;
+import pages.HomePage;
+import pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,13 +13,11 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void testSuccessfulLogin() {
-        // TODO Step 1 — Navigate to BASE_URL
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.navigateTo(BASE_URL);
+        loginPage.login(VALID_USER, VALID_PASS);
 
-        // TODO Step 2 — Find the username field (id="user-name") and type VALID_USER
-        //               Find the password field (id="password") and type VALID_PASS
-
-        // TODO Step 3 — Click the login button (id="login-button")
-
-        // TODO Step 4 — Assert that driver.getCurrentUrl() contains "/inventory.html"
+        HomePage homePage = new HomePage(driver);
+        Assert.assertTrue(homePage.isLoaded(), "Home page did not load after login");
     }
 }
