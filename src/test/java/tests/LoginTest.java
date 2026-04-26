@@ -1,7 +1,5 @@
 package tests;
 
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,7 +11,6 @@ public class LoginTest extends BaseTest {
     private static final String VALID_PASS = "secret_sauce";
 
     @Test
-    @Severity(SeverityLevel.BLOCKER)
     public void testSuccessfulLogin() {
         // TODO Step 1 — Navigate to BASE_URL
 
